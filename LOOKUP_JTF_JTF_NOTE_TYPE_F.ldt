@@ -1,0 +1,1878 @@
+#
+# Identifier: $Id: LOOKUP_JTF_JTF_NOTE_TYPE_F.ldt 345 2020-04-09 09:02:38Z rida.ibnbrahim $
+#
+# History:
+# $Log$
+#
+
+# $Header$
+
+# dbdrv: exec fnd bin FNDLOAD bin &phase=daa+51 checkfile:~PROD:~PATH:~FILE &ui_apps 0 Y UPLOAD @FND:patch/115/import/aflvmlu.lct @~PROD:~PATH/~FILE
+LANGUAGE = "F"
+LDRCONFIG = "aflvmlu.lct 115.20"
+
+#Source Database EBS3
+
+#RELEASE_NAME 11.5.10.2
+
+# -- Begin Entity Definitions -- 
+
+DEFINE FND_LOOKUP_TYPE
+  KEY   VIEW_APPSNAME                   VARCHAR2(50)
+  KEY   LOOKUP_TYPE                     VARCHAR2(30)
+  CTX   APPLICATION_SHORT_NAME          VARCHAR2(50)
+  BASE  CUSTOMIZATION_LEVEL             VARCHAR2(1)
+  CTX   OWNER                           VARCHAR2(4000)
+  BASE  LAST_UPDATE_DATE                VARCHAR2(10)
+  TRANS MEANING                         VARCHAR2(80)
+  TRANS DESCRIPTION                     VARCHAR2(240)
+
+  DEFINE FND_LOOKUP_VALUE
+    KEY   LOOKUP_CODE                     VARCHAR2(30)
+    BASE  ENABLED_FLAG                    VARCHAR2(1)
+    BASE  START_DATE_ACTIVE               VARCHAR2(10)
+    BASE  END_DATE_ACTIVE                 VARCHAR2(10)
+    BASE  TERRITORY_CODE                  VARCHAR2(2)
+    BASE  TAG                             VARCHAR2(150)
+    BASE  ATTRIBUTE_CATEGORY              VARCHAR2(30)
+    BASE  ATTRIBUTE1                      VARCHAR2(150)
+    BASE  ATTRIBUTE2                      VARCHAR2(150)
+    BASE  ATTRIBUTE3                      VARCHAR2(150)
+    BASE  ATTRIBUTE4                      VARCHAR2(150)
+    BASE  ATTRIBUTE5                      VARCHAR2(150)
+    BASE  ATTRIBUTE6                      VARCHAR2(150)
+    BASE  ATTRIBUTE7                      VARCHAR2(150)
+    BASE  ATTRIBUTE8                      VARCHAR2(150)
+    BASE  ATTRIBUTE9                      VARCHAR2(150)
+    BASE  ATTRIBUTE10                     VARCHAR2(150)
+    BASE  ATTRIBUTE11                     VARCHAR2(150)
+    BASE  ATTRIBUTE12                     VARCHAR2(150)
+    BASE  ATTRIBUTE13                     VARCHAR2(150)
+    BASE  ATTRIBUTE14                     VARCHAR2(150)
+    BASE  ATTRIBUTE15                     VARCHAR2(150)
+    CTX   OWNER                           VARCHAR2(4000)
+    BASE  LAST_UPDATE_DATE                VARCHAR2(10)
+    TRANS MEANING                         VARCHAR2(80)
+    TRANS DESCRIPTION                     VARCHAR2(240)
+  END FND_LOOKUP_VALUE
+END FND_LOOKUP_TYPE
+
+# -- End Entity Definitions -- 
+
+
+BEGIN FND_LOOKUP_TYPE "AU" "JTF_NOTE_TYPE"
+  APPLICATION_SHORT_NAME = "JTF"
+  CUSTOMIZATION_LEVEL = "U"
+  OWNER = "ORACLE"
+  LAST_UPDATE_DATE = "2000/05/02"
+  MEANING = "Note type"
+  DESCRIPTION = "Note type for CRM Foundation notes"
+
+  BEGIN FND_LOOKUP_VALUE "GENERAL"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "1999/11/12"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2001/12/14"
+    MEANING = "General Note"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "MANUAL"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "1999/11/12"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2001/12/14"
+    MEANING = "Manually generated note"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "SYSTEM"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "1999/11/12"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2001/12/14"
+    MEANING = "System generated note"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "SR_RESOLUTION"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "1999/11/19"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2001/12/14"
+    MEANING = "Resolution Code For Service Request"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "SR_PROBLEM"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "1999/11/19"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2001/12/14"
+    MEANING = "Problem Code For Service Request"
+  END FND_LOOKUP_VALUE
+  
+END FND_LOOKUP_TYPE
+
+BEGIN FND_LOOKUP_TYPE "FND" "JTF_NOTE_TYPE"
+  APPLICATION_SHORT_NAME = "JTF"
+  CUSTOMIZATION_LEVEL = "E"
+  OWNER = "ORACLE"
+  LAST_UPDATE_DATE = "2001/12/03"
+  MEANING = "Types de note"
+  DESCRIPTION = "Types de note CRM Foundation"
+
+  BEGIN FND_LOOKUP_VALUE "KB_CAUSE"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2000/04/19"
+    TAG = "Note"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2001/12/03"
+    MEANING = "Cause"
+    DESCRIPTION = "Cause"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "KB_CHANGES"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2000/04/19"
+    TAG = "Note"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2001/12/03"
+    MEANING = "Modifications"
+    DESCRIPTION = "Modifications"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "KB_COMMENT_EXP_NOTREVIEWED"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2001/06/05"
+    TAG = "Note"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2001/12/03"
+    MEANING = "Expiré, non révisé"
+    DESCRIPTION = "Expiré, non révisé"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "KB_COMMENT_EXP_REVIEWED"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2001/06/05"
+    TAG = "Note"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2001/12/03"
+    MEANING = "Expiré, révisé"
+    DESCRIPTION = "Expiré, révisé"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "KB_COMMENT_NOTREVIEWED"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2001/06/05"
+    TAG = "Note"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2001/12/03"
+    MEANING = "Non révisé"
+    DESCRIPTION = "Non révisé"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "KB_COMMENT_REVIEWED"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2001/06/05"
+    TAG = "Note"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2001/12/03"
+    MEANING = "Révisé"
+    DESCRIPTION = "Révisé"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "KB_FACT"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2000/04/19"
+    TAG = "Note"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2001/12/03"
+    MEANING = "Fait"
+    DESCRIPTION = "Fait"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "KB_OBJECTIVE"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2000/04/19"
+    TAG = "Note"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2001/12/03"
+    MEANING = "Objectif"
+    DESCRIPTION = "Objectif"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "KB_SYMPTOM"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2000/04/19"
+    TAG = "Note"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2001/12/03"
+    MEANING = "Symptôme"
+    DESCRIPTION = "Symptôme"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "ACT_HIS"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2000/06/15"
+    TAG = "Note"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2001/12/03"
+    MEANING = "Activité"
+    DESCRIPTION =
+   "Une activité liée à un point de contact du client (Historique des interactions)"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "AMS_ADMIN"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2000/04/19"
+    TAG = "Note"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2001/12/03"
+    MEANING = "Administratif"
+    DESCRIPTION = "Administratif"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "AMS_APPROVAL"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2000/04/06"
+    TAG = "Note"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2001/12/03"
+    MEANING = "Approbation"
+    DESCRIPTION = "Approbation"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "AMS_BENEFIT"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2000/04/19"
+    TAG = "Note"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2001/12/03"
+    MEANING = "Bénéfice"
+    DESCRIPTION = "Bénéfice"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "AMS_BJFT"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2000/12/27"
+    TAG = "Note"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2001/12/03"
+    MEANING = "Justification d'activité"
+    DESCRIPTION = "Justification d'activité"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "AMS_CALL"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2000/04/06"
+    TAG = "Note"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2001/12/03"
+    MEANING = "Appel de l'action"
+    DESCRIPTION = "Appel de l'action"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "AMS_COMMENT"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2001/05/02"
+    TAG = "Note"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2001/12/03"
+    MEANING = "Commentaire"
+    DESCRIPTION = "Commentaire"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "AMS_COMPETE"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2000/04/06"
+    TAG = "Note"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2001/12/03"
+    MEANING = "Concurrence"
+    DESCRIPTION = "Concurrence"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "AMS_DEDU"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2000/04/05"
+    TAG = "Note"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2001/12/03"
+    MEANING = "Notes de déduction"
+    DESCRIPTION = "Notes de déduction"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "AMS_EVENT"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2000/04/19"
+    TAG = "Note"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2001/12/03"
+    MEANING = "Evénement"
+    DESCRIPTION = "Evénement"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "AMS_EXTERNAL"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2000/04/19"
+    TAG = "Note"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2001/12/03"
+    MEANING = "Externe"
+    DESCRIPTION = "Externe"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "AMS_HOTEL"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2000/04/19"
+    TAG = "Note"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2001/12/03"
+    MEANING = "Hôtels locaux"
+    DESCRIPTION = "Hôtels locaux"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "AMS_INFORMATION"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2000/06/02"
+    TAG = "Note"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2001/12/03"
+    MEANING = "Informations"
+    DESCRIPTION = "Informations"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "AMS_JUSTIFICATION"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2000/06/02"
+    TAG = "Note"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2001/12/03"
+    MEANING = "Justification"
+    DESCRIPTION = "Justification"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "AMS_MARKETING"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2000/04/19"
+    TAG = "Note"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2001/12/03"
+    MEANING = "Marketing"
+    DESCRIPTION = "Marketing"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "AMS_MISC"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2000/06/02"
+    TAG = "Note"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2001/12/03"
+    MEANING = "Divers"
+    DESCRIPTION = "Divers"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "AMS_MKTR"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2000/12/27"
+    TAG = "Note"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2001/12/03"
+    MEANING = "Etude de marché"
+    DESCRIPTION = "Etude de marché"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "AMS_PARKING"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2000/04/19"
+    TAG = "Note"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2001/12/03"
+    MEANING = "Informations sur le parking"
+    DESCRIPTION = "Informations sur le parking"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "AMS_PARTNER"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2000/04/19"
+    TAG = "Note"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2001/12/03"
+    MEANING = "Partenaire associé"
+    DESCRIPTION = "Partenaire associé"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "AMS_PERF"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2000/06/05"
+    TAG = "Note"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2001/12/03"
+    MEANING = "Performances"
+    DESCRIPTION = "Performances"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "AMS_PRAP"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2000/12/27"
+    TAG = "Note"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2001/12/03"
+    MEANING = "Approbation du tarif"
+    DESCRIPTION = "Approbation du tarif"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "AMS_PRDS"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2000/12/27"
+    TAG = "Note"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2001/12/03"
+    MEANING = "Stratégie de produit"
+    DESCRIPTION = "Stratégie de produit"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "AMS_PRICELISTREPORT"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2001/08/17"
+    TAG = "Note"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2001/12/03"
+    MEANING = "Détails de ligne de tarif"
+    DESCRIPTION = "Détails de ligne de tarif"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "AMS_PRST"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2000/12/27"
+    TAG = "Note"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2001/12/03"
+    MEANING = "Stratégie de tarification"
+    DESCRIPTION = "Stratégie de tarification"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "AMS_REJC"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2000/06/05"
+    TAG = "Note"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2001/12/03"
+    MEANING = "Rejet"
+    DESCRIPTION = "Rejet"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "AMS_REQUEST"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2000/04/19"
+    TAG = "Note"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2001/12/03"
+    MEANING = "Demande"
+    DESCRIPTION = "Demande"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "AMS_SAFC"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2000/12/27"
+    TAG = "Note"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2001/12/03"
+    MEANING = "Prévision de ventes"
+    DESCRIPTION = "Prévision de ventes"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "AMS_TRAVEL"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2000/05/11"
+    TAG = "Note"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2001/12/03"
+    MEANING = "Informations sur le déplacement"
+    DESCRIPTION = "Informations sur le déplacement"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "AMS_VAPR"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2000/12/27"
+    TAG = "Note"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2001/12/03"
+    MEANING = "Proposition de valeur"
+    DESCRIPTION = "Proposition de valeur"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "AMS_VENUE"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2000/04/06"
+    TAG = "Note"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2001/12/03"
+    MEANING = "Informations sur le lieu de rendez-vous"
+    DESCRIPTION = "Informations sur le lieu de rendez-vous"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "ASF_CALLBACK"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2001/08/20"
+    TAG = "Note"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2001/12/03"
+    MEANING = "Rappel"
+    DESCRIPTION = "Rappel"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "ASF_CONVERSATION"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2001/08/20"
+    TAG = "Note"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2001/12/03"
+    MEANING = "Discussion"
+    DESCRIPTION = "Discussion"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "ASF_MEETING"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2001/08/20"
+    TAG = "Note"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2001/12/03"
+    MEANING = "Réunion"
+    DESCRIPTION = "Réunion"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "ASF_OTHER"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2001/08/20"
+    TAG = "Note"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2001/12/03"
+    MEANING = "Autre"
+    DESCRIPTION = "Autre"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "AST_SYSTEM"
+    ENABLED_FLAG = "N"
+    START_DATE_ACTIVE = "2001/07/13"
+    END_DATE_ACTIVE = "2001/07/13"
+    TAG = "Note"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2001/12/03"
+    MEANING = "AST_SYSTEM"
+    DESCRIPTION = "Vérifiez la définition du type de note"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "AST_USER"
+    ENABLED_FLAG = "N"
+    START_DATE_ACTIVE = "2001/07/13"
+    END_DATE_ACTIVE = "2001/07/13"
+    TAG = "Note"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2001/12/03"
+    MEANING = "AST_USER"
+    DESCRIPTION = "Vérifiez la définition du type de note"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "AS_ACTION"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2000/12/28"
+    TAG = "Note"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2001/12/03"
+    MEANING = "Action entreprise"
+    DESCRIPTION = "Action entreprise"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "AS_ACT_TO_CLOSE"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2000/12/28"
+    TAG = "Note"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2001/12/03"
+    MEANING = "Action à terminer"
+    DESCRIPTION = "Action à terminer"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "AS_FCT_FYA"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2000/12/28"
+    TAG = "Note"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2001/12/03"
+    MEANING = "Pour votre action"
+    DESCRIPTION = "Pour votre action"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "AS_FCT_FYI"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2000/12/28"
+    TAG = "Note"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2001/12/03"
+    MEANING = "Pour votre information"
+    DESCRIPTION = "Pour votre information"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "AS_OBSTACLE"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2000/12/28"
+    TAG = "Note"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2001/12/03"
+    MEANING = "Obstacle"
+    DESCRIPTION = "Obstacle"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "AS_SYSTEM"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2000/05/04"
+    TAG = "Note"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2001/12/03"
+    MEANING = "Note générée par le système"
+    DESCRIPTION = "Note générée par le système"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "AS_USER"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2000/05/04"
+    TAG = "Note"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2001/12/03"
+    MEANING = "Note générée par l'utilisateur"
+    DESCRIPTION = "Note générée par l'utilisateur"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "CLOSURE"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2000/04/19"
+    TAG = "Note"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2001/12/03"
+    MEANING = "Fermeture"
+    DESCRIPTION = "Fermeture"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "CSF_ROUTE_INFO"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2001/07/13"
+    TAG = "Note"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2001/12/03"
+    MEANING = "Informations acheminement"
+    DESCRIPTION =
+   "Une note contenant les informations d'acheminement pour les affectations de tâche"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "CS_PROBLEM"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2000/04/19"
+    TAG = "Note"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2001/12/03"
+    MEANING = "Description du problème"
+    DESCRIPTION = "Description du problème"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "CS_RESOLUTION"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2000/04/19"
+    TAG = "Note"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2001/12/03"
+    MEANING = "Description de la résolution"
+    DESCRIPTION = "Description de la résolution"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "CUG_SR_ATTR_DETAILS"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2001/06/19"
+    TAG = "Note"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2001/12/03"
+    MEANING = "Détails des attributs des demandes de service"
+    DESCRIPTION = "Détails des attributs des demandes de service"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "DEMS_DF_NORMAL_STATEMENT"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2001/08/15"
+    TAG = "Note"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2001/12/03"
+    MEANING = "Défaut - Déclaration normale"
+    DESCRIPTION = "Défaut - Déclaration normale"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "DEMS_DF_PROBLEM_STATEMENT"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2001/08/15"
+    TAG = "Note"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2001/12/03"
+    MEANING = "Défaut - Déclaration de problème"
+    DESCRIPTION = "Défaut - Déclaration de problème"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "DEMS_DF_WORKAROUND"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2001/08/15"
+    TAG = "Note"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2001/12/03"
+    MEANING = "Défaut - Contournement"
+    DESCRIPTION = "Défaut - Contournement"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "DEMS_ENH_BUS_JUST"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2001/08/15"
+    TAG = "Note"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2001/12/03"
+    MEANING = "Demande d'amélioration - Justification économique"
+    DESCRIPTION = "Demande d'amélioration - Justification économique"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "DEMS_ENH_REQUEST"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2001/08/15"
+    TAG = "Note"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2001/12/03"
+    MEANING = "Demande d'amélioration"
+    DESCRIPTION = "Demande d'amélioration"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "DEMS_ENH_RESPONSE"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2001/08/15"
+    TAG = "Note"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2001/12/03"
+    MEANING = "Demande d'amélioration - Réponse"
+    DESCRIPTION = "Demande d'amélioration - Réponse"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "GENERAL"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2000/04/06"
+    TAG = "Note"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2001/12/03"
+    MEANING = "Note générale"
+    DESCRIPTION = "Note générale"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "IEX_DELIQUENCY"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2001/07/13"
+    TAG = "Note"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2001/12/03"
+    MEANING = "Recouvrement - Evaluation du défaut de paiement"
+    DESCRIPTION = "Recouvrement - Evaluation du défaut de paiement"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "IEX_DISPUTE"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2001/07/13"
+    TAG = "Note"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2001/12/03"
+    MEANING = "Recouvrement - Litige"
+    DESCRIPTION = "Recouvrement - Litige"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "IEX_DUNNING"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2001/07/13"
+    TAG = "Note"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2001/12/03"
+    MEANING = "Recouvrement - Relance"
+    DESCRIPTION = "Recouvrement - Relance"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "IEX_INVOICES"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2001/07/13"
+    TAG = "Note"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2001/12/03"
+    MEANING = "Recouvrement - Factures"
+    DESCRIPTION = "Recouvrement - Factures"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "IEX_PAYMENT"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2001/07/13"
+    TAG = "Note"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2001/12/03"
+    MEANING = "Recouvrement - Règlement"
+    DESCRIPTION = "Recouvrement - Règlement"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "IEX_PROMISE"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2001/07/13"
+    TAG = "Note"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2001/12/03"
+    MEANING = "Recouvrement - Promesse de règlement"
+    DESCRIPTION = "Recouvrement - Promesse de règlement"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "IEX_REVERSAL"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2001/07/13"
+    TAG = "Note"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2001/12/03"
+    MEANING = "Recouvrement - Contrepassation des règlements"
+    DESCRIPTION = "Recouvrement - Contrepassation des règlements"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "INT_HIS"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2000/05/04"
+    TAG = "Note"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2001/12/03"
+    MEANING = "Interaction"
+    DESCRIPTION = "Point de contact du client"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "KB_ACTION"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2000/04/19"
+    TAG = "Note"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2001/12/03"
+    MEANING = "Action"
+    DESCRIPTION = "Action"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "IEX_CASES"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2002/01/31"
+    TAG = "Note"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2002/01/31"
+    MEANING = "Recouvrement - Cas"
+    DESCRIPTION = "Recouvrement - Cas"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "IEX_ACCOUNT"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2002/03/14"
+    TAG = "Note"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2002/03/14"
+    MEANING = "Recouvrement - Compte"
+    DESCRIPTION = "Recouvrement - Compte"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "IEX_BANKRUPCY"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2002/03/14"
+    TAG = "Note"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2002/03/14"
+    MEANING = "Recouvrement - Faillite"
+    DESCRIPTION = "Recouvrement - Faillite"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "IEX_REPOSSESSION"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2002/03/14"
+    TAG = "Note"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2002/03/14"
+    MEANING = "Recouvrement - Saisie"
+    DESCRIPTION = "Recouvrement - Saisie"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "IEX_WRITEOFF"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2002/03/14"
+    TAG = "Note"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2002/03/14"
+    MEANING = "Recouvrement - Annulation"
+    DESCRIPTION = "Recouvrement - Annulation"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "IEX_LITIGATION"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2002/03/14"
+    TAG = "Note"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2002/03/14"
+    MEANING = "Recouvrement - Contentieux"
+    DESCRIPTION = "Recouvrement - Contentieux"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "CSD_DIAG"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2002/10/18"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2002/10/18"
+    MEANING = "Diagnostics de magasin de réparation"
+    DESCRIPTION = "Diagnostics de magasin de réparation"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "IEX_ADJUSTMENT"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2002/11/13"
+    TAG = "Note"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2002/11/13"
+    MEANING = "Recouvrement - Ajustement"
+    DESCRIPTION = "Recouvrement - Ajustement"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "IEX_BILLTO"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2003/04/18"
+    TAG = "Note"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2003/04/18"
+    MEANING = "Recouvrement - Facturation"
+    DESCRIPTION = "Recouvrement - Facturation"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "IEM_DELETE_REASON"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2003/05/23"
+    TAG = "Note"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2003/05/23"
+    MEANING = "Motif de suppression"
+    DESCRIPTION = "Motif de suppression"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "IEM_REROUTE_REASON"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2003/05/23"
+    TAG = "Note"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2003/05/23"
+    MEANING = "Motif de réacheminement"
+    DESCRIPTION = "Motif de réacheminement"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "IEM_TRANSFER_REASON"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2003/05/23"
+    TAG = "Note"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2003/05/23"
+    MEANING = "Motif de transfert"
+    DESCRIPTION = "Motif de transfert"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "IEM_ASSIGN_REASON"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2003/05/23"
+    TAG = "Note"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2003/05/23"
+    MEANING = "Motif d'affectation"
+    DESCRIPTION = "Motif d'affectation"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "IEM_INTERNAL"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2003/05/23"
+    TAG = "Note"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2003/05/23"
+    MEANING = "Note interne"
+    DESCRIPTION = "Note interne"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "IEX_CNSLD"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2003/06/24"
+    TAG = "Note"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2003/06/24"
+    MEANING = "Recouvrement - Facture de crédit-bail"
+    DESCRIPTION = "Recouvrement - Facture de crédit-bail"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "IEX_K_HEADER"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2003/06/24"
+    TAG = "Note"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2003/06/24"
+    MEANING = "Recouvrement - Contrat de crédit-bail"
+    DESCRIPTION = "Recouvrement - Contrat de crédit-bail"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "OKS_ADMIN"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2003/07/18"
+    TAG = "Note"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2003/07/18"
+    MEANING = "Administration des contrats"
+    DESCRIPTION = "Administration des contrats"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "OKS_COV"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2003/07/18"
+    TAG = "Note"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2003/07/18"
+    MEANING = "Couverture de contrats"
+    DESCRIPTION = "Couverture de contrats"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "IEM_PUSHBACK_REASON"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2003/08/19"
+    TAG = "Note"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2003/08/19"
+    MEANING = "Motif de remise dans la boîte de réception"
+    DESCRIPTION = "Motif de remise dans la boîte de réception"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "QOT_SALES_ASSIST"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2003/11/06"
+    TAG = "Note"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2003/11/06"
+    MEANING = "Assistance commerciale"
+    DESCRIPTION = "Assistance commerciale"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "LNS_ORIG"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2004/02/24"
+    TAG = "Note"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2004/02/24"
+    MEANING = "Origine"
+    DESCRIPTION = "Origine du prêt"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "LNS_SRVC"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2004/02/24"
+    TAG = "Note"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2004/02/24"
+    MEANING = "Service associé"
+    DESCRIPTION = "Service associé au prêt"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "OKC_ARTICLE"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2000/07/27"
+    TAG = "Note"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2004/10/04"
+    MEANING = "Clauses de contrat"
+    DESCRIPTION = "Clauses de contrat"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "LNS_FEE_UPDATE_REASON"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2005/01/13"
+    TAG = "Note"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2005/01/13"
+    MEANING = "Motif de mise à jour de frais"
+    DESCRIPTION = "Motif de mise à jour de frais"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "OPT - APPEL DU CLIENT"
+    ENABLED_FLAG = "N"
+    START_DATE_ACTIVE = "1951/01/01"
+    END_DATE_ACTIVE = "1951/01/01"
+    TAG = "Note"
+    OWNER = "1830LOE"
+    LAST_UPDATE_DATE = "2016/02/20"
+    MEANING = "OLD"
+    DESCRIPTION = "OLD"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "XX_IEX_INFORMATIONS"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "1951/01/01"
+    TAG = "Note"
+    OWNER = "1830LOE"
+    LAST_UPDATE_DATE = "2016/02/20"
+    MEANING = "OPT - Informations"
+    DESCRIPTION = "OPT - Informations"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "XX_IEX_SUSPENSION_AGREMENT"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "1951/01/01"
+    TAG = "Note"
+    OWNER = "1830LOE"
+    LAST_UPDATE_DATE = "2016/02/20"
+    MEANING = "OPT - Suspension d'agrément"
+    DESCRIPTION = "OPT - Suspension d'agrément"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "XX_IEX_SAISIE"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "1951/01/01"
+    TAG = "Note"
+    OWNER = "1830LOE"
+    LAST_UPDATE_DATE = "2016/02/20"
+    MEANING = "OPT - Saisie"
+    DESCRIPTION = "OPT - Saisie"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "XX_IEX_REPRISE"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "1951/01/01"
+    TAG = "Note"
+    OWNER = "1830LOE"
+    LAST_UPDATE_DATE = "2016/02/20"
+    MEANING = "OPT - Reprise données contentieux"
+    DESCRIPTION = "OPT - Reprise données contentieux"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "XX_IEX_RENDEZ-VOUS"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "1951/01/01"
+    TAG = "Note"
+    OWNER = "1830LOE"
+    LAST_UPDATE_DATE = "2016/02/20"
+    MEANING = "OPT - Rendez-vous"
+    DESCRIPTION = "OPT - Rendez-vous"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "XX_IEX_RELANCE"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "1951/01/01"
+    TAG = "Note"
+    OWNER = "1830LOE"
+    LAST_UPDATE_DATE = "2016/02/20"
+    MEANING = "OPT - Relance"
+    DESCRIPTION = "OPT - Relance"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "XX_IEX_RAPPEL_NOTAIRE"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "1951/01/01"
+    TAG = "Note"
+    OWNER = "1830LOE"
+    LAST_UPDATE_DATE = "2016/02/20"
+    MEANING = "OPT - Relance notaire"
+    DESCRIPTION = "OPT - Relance notaire"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "XX_IEX_RAPPEL_JUDICIAIRE"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "1951/01/01"
+    TAG = "Note"
+    OWNER = "1830LOE"
+    LAST_UPDATE_DATE = "2016/02/20"
+    MEANING = "OPT- Lettre de rappel aux mandataires judiciaire"
+    DESCRIPTION = "OPT- Lettre de rappel aux mandataires judiciaire"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "XX_IEX_RAPPEL_HUISSIER"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "1951/01/01"
+    TAG = "Note"
+    OWNER = "1830LOE"
+    LAST_UPDATE_DATE = "2016/02/20"
+    MEANING = "OPT - Relance Huissier"
+    DESCRIPTION = "OPT - Relance Huissier"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "XX_IEX_RAPPEL"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "1951/01/01"
+    TAG = "Note"
+    OWNER = "1830LOE"
+    LAST_UPDATE_DATE = "2016/02/20"
+    MEANING = "OPT - Rappel"
+    DESCRIPTION = "OPT - Rappel"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "XX_IEX_PROMESSE"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "1951/01/01"
+    TAG = "Note"
+    OWNER = "1830LOE"
+    LAST_UPDATE_DATE = "2016/02/20"
+    MEANING = "OPT - Promesse"
+    DESCRIPTION = "OPT - Promesse de règlement"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "XX_IEX_PROCEDURE_COLLECTIVE"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "1951/01/01"
+    TAG = "Note"
+    OWNER = "1830LOE"
+    LAST_UPDATE_DATE = "2016/02/20"
+    MEANING = "OPT - Procédure collective"
+    DESCRIPTION = "OPT - Procédure collective"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "XX_IEX_OA_HUISSIER"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "1951/01/01"
+    TAG = "Note"
+    OWNER = "1830LOE"
+    LAST_UPDATE_DATE = "2016/02/20"
+    MEANING = "OPT - Commentaire OA Huissier"
+    DESCRIPTION = "OPT - Commentaire OA Huissier"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "XX_IEX_MOTIF_MAJ_SOLDE"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "1951/01/01"
+    TAG = "Note"
+    OWNER = "1830LOE"
+    LAST_UPDATE_DATE = "2016/02/20"
+    MEANING = "OPT - Motif de mise à jour de solde"
+    DESCRIPTION = "OPT - Motif de mise à jour de solde (transfert)"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "XX_IEX_ANV"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "1951/01/01"
+    TAG = "Note"
+    OWNER = "1830LOE"
+    LAST_UPDATE_DATE = "2016/02/20"
+    MEANING = "OPT - Motif Non-Valeur"
+    DESCRIPTION = "OPT - Motif Non-Valeur"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "XX_IEX_APPEL"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "1951/01/01"
+    TAG = "Note"
+    OWNER = "1830LOE"
+    LAST_UPDATE_DATE = "2016/02/20"
+    MEANING = "OPT - Appel du client"
+    DESCRIPTION = "OPT - Appel du client"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "XX_IEX_APPEL_PASSE"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "1951/01/01"
+    TAG = "Note"
+    OWNER = "1830LOE"
+    LAST_UPDATE_DATE = "2016/02/20"
+    MEANING = "OPT - Appel téléphonique"
+    DESCRIPTION = "OPT - Appel passé"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "XX_IEX_AUTRE"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "1951/01/01"
+    TAG = "Note"
+    OWNER = "1830LOE"
+    LAST_UPDATE_DATE = "2016/02/20"
+    MEANING = "OPT - Autre"
+    DESCRIPTION = "OPT - Autre"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "XX_IEX_CONTESTATION"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "1951/01/01"
+    TAG = "Note"
+    OWNER = "1830LOE"
+    LAST_UPDATE_DATE = "2016/02/20"
+    MEANING = "OPT - Contestation"
+    DESCRIPTION = "OPT - Contestation client"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "XX_IEX_CONTRAINTE_HUISSIER"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "1951/01/01"
+    TAG = "Note"
+    OWNER = "1830LOE"
+    LAST_UPDATE_DATE = "2016/02/20"
+    MEANING = "OPT - Contrainte Huissier"
+    DESCRIPTION = "OPT - Contrainte Huissier"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "XX_IEX_DEMANDE_INTERVENTION"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "1951/01/01"
+    TAG = "Note"
+    OWNER = "1830LOE"
+    LAST_UPDATE_DATE = "2016/02/20"
+    MEANING = "OPT - Demande d'intervention service clientèle"
+    DESCRIPTION = "OPT - Demande de remise gracieuse"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "XX_IEX_DISCUSSION"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "1951/01/01"
+    TAG = "Note"
+    OWNER = "1830LOE"
+    LAST_UPDATE_DATE = "2016/02/20"
+    MEANING = "OPT - Discussion"
+    DESCRIPTION = "OPT - Discussion"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "XX_IEX_FACTURATION"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "1951/01/01"
+    TAG = "Note"
+    OWNER = "1830LOE"
+    LAST_UPDATE_DATE = "2016/02/20"
+    MEANING = "OPT - Facturation"
+    DESCRIPTION = "OPT - Facturation"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "XX_IEX_HUISSIER_COMMENT"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "1951/01/01"
+    TAG = "Note"
+    OWNER = "1830LOE"
+    LAST_UPDATE_DATE = "2016/02/20"
+    MEANING = "OPT - Commentaire Huissier"
+    DESCRIPTION = "OPT - Commentaire Huissier"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "XX_IEX_HUISSIER_NOTIF"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "1951/01/01"
+    TAG = "Note"
+    OWNER = "1830LOE"
+    LAST_UPDATE_DATE = "2016/02/20"
+    MEANING = "OPT - Huissier Notification tiers detenteur"
+    DESCRIPTION = "OPT - Huissier Notification tiers detenteur"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "XX_IEX_TERMINER"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "1951/01/01"
+    TAG = "Note"
+    OWNER = "1830LOE"
+    LAST_UPDATE_DATE = "2016/02/20"
+    MEANING = "OPT - Terminer"
+    DESCRIPTION = "OPT - Terminer"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "XX_IEX_INFORMATION_ACHEM"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "1951/01/01"
+    TAG = "Note"
+    OWNER = "1830LOE"
+    LAST_UPDATE_DATE = "2016/02/20"
+    MEANING = "OPT - Informations acheminement"
+    DESCRIPTION = "OPT - informations sur les retours de courrier"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "XX_IEX_LETTRE_JUDICIAIRE"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "1951/01/01"
+    TAG = "Note"
+    OWNER = "1830LOE"
+    LAST_UPDATE_DATE = "2016/02/20"
+    MEANING = "OPT - Lettre aux mandataires judiciaire"
+    DESCRIPTION = "OPT - Lettre aux mandataires judiciaire"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "XX_IEX_LETTRE_NOTAIRE"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "1951/01/01"
+    TAG = "Note"
+    OWNER = "1830LOE"
+    LAST_UPDATE_DATE = "2016/02/20"
+    MEANING = "OPT - Lettre aux notaires"
+    DESCRIPTION = "OPT - Lettre aux notaires"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "XX_IEX_MAINLEVEE_PC"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "1951/01/01"
+    TAG = "Note"
+    OWNER = "1830LOE"
+    LAST_UPDATE_DATE = "2016/02/20"
+    MEANING = "OPT- Lettre de mainlevée PC"
+    DESCRIPTION = "OPT- Lettre de mainlevée PC"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "XX_IEX_MAIN_TOTALE"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "1951/01/01"
+    TAG = "Note"
+    OWNER = "1830LOE"
+    LAST_UPDATE_DATE = "2016/02/20"
+    MEANING = "OPT - Main levée Totale"
+    DESCRIPTION = "OPT - Main levée Totale"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "XX_IEX_MOTIF_DEFAUT"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "1951/01/01"
+    TAG = "Note"
+    OWNER = "1830LOE"
+    LAST_UPDATE_DATE = "2016/02/20"
+    MEANING = "OPT - Evaluation défaut paiement"
+    DESCRIPTION = "OPT - Motif de défaut de paiement"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "XX_IEX_LETTRE_JUDICIAIRE_RES"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2017/02/13"
+    TAG = "Note"
+    OWNER = "PJOURDAIN"
+    LAST_UPDATE_DATE = "2017/03/06"
+    MEANING = "OPT - Lettre aux mandataires judiciaire avec reserve"
+    DESCRIPTION = "OPT - Lettre aux mandataires judiciaire avec reserve"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "XX_IEX_LETTRE_CREANCE"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2017/03/06"
+    TAG = "Note"
+    OWNER = "PJOURDAIN"
+    LAST_UPDATE_DATE = "2017/03/06"
+    MEANING = "OPT - Lettre de créance chirographaire"
+    DESCRIPTION = "OPT - Lettre de créance chirographaire"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "XX_IEX_ANV_PC"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "1951/01/01"
+    TAG = "Note"
+    OWNER = "PJOURDAIN"
+    LAST_UPDATE_DATE = "2017/08/10"
+    MEANING = "OPT - Motif Non-Valeur-PC"
+    DESCRIPTION = "OPT - Motif Non-Valeur-PC"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "XX_IEX_REPONSE_OA"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2017/12/08"
+    TAG = "Note"
+    OWNER = "YTAIMOURYA"
+    LAST_UPDATE_DATE = "2017/12/08"
+    MEANING = "OPT - Réponse OA"
+    DESCRIPTION = "OPT - Réponse OA"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "XX_IEX_BANQUE_NOTIF"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2018/02/20"
+    TAG = "Note"
+    OWNER = "JBACHERE"
+    LAST_UPDATE_DATE = "2018/02/20"
+    MEANING = "OPT - Banque  Notification"
+    DESCRIPTION = "OPT - Banque  Notification"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "XX_IEX_EMPLOYEUR_NOTIF"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2018/02/20"
+    TAG = "Note"
+    OWNER = "JBACHERE"
+    LAST_UPDATE_DATE = "2018/02/20"
+    MEANING = "OPT - Employeur  Notification"
+    DESCRIPTION = "OPT - Employeur  Notification"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "XX_IEX_ADM_ANV"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "1951/01/01"
+    TAG = "Note"
+    OWNER = "PJOURDAIN"
+    LAST_UPDATE_DATE = "2018/05/07"
+    MEANING = "OPT - Admission Non-Valeur"
+    DESCRIPTION = "OPT - Admission Non-Valeur"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "XX_IEX_ANNULE_CTRT_HUISSIER"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "1951/01/01"
+    TAG = "Note"
+    OWNER = "PJOURDAIN"
+    LAST_UPDATE_DATE = "2018/11/15"
+    MEANING = "OPT - Contrainte Annulée"
+    DESCRIPTION = "OPT - Contrainte Annulée"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "XX_IEX_LEVEE_CONTENTIEUX"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2019/02/25"
+    TAG = "Note"
+    OWNER = "GGRENIER"
+    LAST_UPDATE_DATE = "2019/02/25"
+    MEANING = "OPT - Levée contentieux"
+    DESCRIPTION = "OPT - Levée contentieux"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "XX_IEX_RAPPEL_OAE"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "1951/01/01"
+    TAG = "Note"
+    OWNER = "PJOURDAIN"
+    LAST_UPDATE_DATE = "2019/03/28"
+    MEANING = "OPT - Relance OAE"
+    DESCRIPTION = "OPT - Relance OAE"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "XX_IEX_MAINLEV_OAE"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2019/05/06"
+    TAG = "Note"
+    OWNER = "PJOURDAIN"
+    LAST_UPDATE_DATE = "2019/05/06"
+    MEANING = "Mainlevée OA Employeur"
+    DESCRIPTION = "Mainlevée OA Employeur"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "XX_IEX_MAINLEV_OAB"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "1951/01/01"
+    TAG = "Note"
+    OWNER = "PJOURDAIN"
+    LAST_UPDATE_DATE = "2019/05/07"
+    MEANING = "Mainlevée OA Bancaire"
+    DESCRIPTION = "Mainlevée OA Bancaire"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "XX_IEX_ACCORD_PAIEMENT"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2020/04/09"
+    TAG = "Note"
+    OWNER = "GGRENIER"
+    LAST_UPDATE_DATE = "2020/04/09"
+    MEANING = "OPT - Accord de paiement"
+    DESCRIPTION = "OPT - Accord de paiement"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "XX_IEX_ANNUL_ACCORD_PAIEMENT"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2020/04/09"
+    TAG = "Note"
+    OWNER = "GGRENIER"
+    LAST_UPDATE_DATE = "2020/04/09"
+    MEANING = "OPT - Annulation de l'accord de paiement"
+    DESCRIPTION = "OPT - Annulation de l'accord de paiement"
+  END FND_LOOKUP_VALUE
+  
+END FND_LOOKUP_TYPE
+
+BEGIN FND_LOOKUP_TYPE "JTF" "JTF_NOTE_TYPE"
+  APPLICATION_SHORT_NAME = "JTF"
+  CUSTOMIZATION_LEVEL = "E"
+  OWNER = "ORACLE"
+  LAST_UPDATE_DATE = "2000/05/02"
+  MEANING = "JTF_NOTE_TYPE"
+  DESCRIPTION = "Note types"
+
+  BEGIN FND_LOOKUP_VALUE "ACTION"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2000/01/01"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2000/05/02"
+    MEANING = "Action"
+    DESCRIPTION = "Action"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "VENUE"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2000/01/01"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2000/05/02"
+    MEANING = "Venue"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "ADMIN"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2000/01/01"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2000/05/02"
+    MEANING = "Admin"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "AMS_CALL"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2000/01/01"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2000/05/02"
+    MEANING = "Calls"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "AMS_COMPETE"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2000/01/01"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2000/05/02"
+    MEANING = "AMS Competition"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "AMS_DEPEND"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2000/01/01"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2000/05/02"
+    MEANING = "Dependency"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "AMS_GOALS"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2000/01/01"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2000/05/02"
+    MEANING = "Goals"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "AMS_MKOP"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2000/01/01"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2000/05/02"
+    MEANING = "Marketing Oppurtunity"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "AMS_OBJV"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2000/01/01"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2000/05/02"
+    MEANING = "Marketing Objectives"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "AMS_STRT"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2000/01/01"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2000/05/02"
+    MEANING = "Start"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "APPROVAL"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2000/01/01"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2000/05/02"
+    MEANING = "Approval"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "BENEFIT"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2000/01/01"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2000/05/02"
+    MEANING = "Benefit"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "CAUSE"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2000/01/01"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2000/05/02"
+    MEANING = "Cause"
+    DESCRIPTION = "Cause"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "CHANGES"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2000/01/01"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2000/05/02"
+    MEANING = "Changes"
+    DESCRIPTION = "Changes"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "COMPETITOR"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2000/01/01"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2000/05/02"
+    MEANING = "Competitor"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "CONFIDENTIAL"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2000/01/01"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2000/05/02"
+    MEANING = "Confidential"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "DF_ANALYSIS"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2000/01/01"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2000/05/02"
+    MEANING = "Analysis"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "DF_PATCH"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2000/01/01"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2000/05/02"
+    MEANING = "Patch"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "DF_RESOLUTION"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2000/01/01"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2000/05/02"
+    MEANING = "Resolution"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "DIRECTIONS"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2000/01/01"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2000/05/02"
+    MEANING = "Directions"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "EVENT"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2000/01/01"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2000/05/02"
+    MEANING = "event"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "EXTERNAL"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2000/01/01"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2000/05/02"
+    MEANING = "External"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "FACT"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2000/01/01"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2000/05/02"
+    MEANING = "Fact"
+    DESCRIPTION = "Fact"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "GENERAL"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2000/01/01"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2000/05/02"
+    MEANING = "General"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "HOTEL"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2000/01/01"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2000/05/02"
+    MEANING = "Hotel"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "MANUAL"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2000/01/01"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2000/05/02"
+    MEANING = "Manual"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "OBJECTIVE"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2000/01/01"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2000/05/02"
+    MEANING = "Objective"
+    DESCRIPTION = "Objective"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "PARKING"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2000/01/01"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2000/05/02"
+    MEANING = "Parking"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "PARTNER"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2000/01/01"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2000/05/02"
+    MEANING = "Partner"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "REQUEST"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2000/01/01"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2000/05/02"
+    MEANING = "Request"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "SR_PROBLEM"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2000/01/01"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2000/05/02"
+    MEANING = "Problem Code for Service Requests"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "SR_RESOLUTION"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2000/01/01"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2000/05/02"
+    MEANING = "Resolution Code for Service Requests"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "SYMPTOM"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2000/01/01"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2000/05/02"
+    MEANING = "Symptom"
+    DESCRIPTION = "Symptom"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "SYSTEM"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2000/01/01"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2000/05/02"
+    MEANING = "System generated notes"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "TRAVEL"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2000/01/01"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2000/05/02"
+    MEANING = "Travel"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "USER"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2000/01/01"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2000/05/02"
+    MEANING = "User Generated Notes"
+  END FND_LOOKUP_VALUE
+  
+  BEGIN FND_LOOKUP_VALUE "ACTION_CALL"
+    ENABLED_FLAG = "Y"
+    START_DATE_ACTIVE = "2000/01/01"
+    OWNER = "ORACLE"
+    LAST_UPDATE_DATE = "2000/05/02"
+    MEANING = "Call to action"
+  END FND_LOOKUP_VALUE
+  
+END FND_LOOKUP_TYPE
+
